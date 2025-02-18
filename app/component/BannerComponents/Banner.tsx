@@ -18,7 +18,7 @@ const Banner = () => {
       className="relative w-full text-center bg-cover bg-center bg-no-repeat h-auto md:h-[400px]"
       style={{ backgroundImage: "url('/Images/bannerTwoBg.jpg')" }}
     >
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between h-full px-6 md:px-10 bg-white w-[90%] md:w-[81%] mx-auto py-6 md:py-0">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between h-full px-6 md:px-10 bg-white w-[100%] md:w-[90%] mx-auto py-6 md:py-0">
         
         {/* Image Section */}
        

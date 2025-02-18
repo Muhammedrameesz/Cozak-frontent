@@ -10,11 +10,14 @@ import Banner from "../component/BannerComponents/Banner";
 import FooterComponent from "../component/FooterComponent/FooterComponent";
 import Partners from "../component/PartnerComponent/Partner";
 import ClientReviews from "../component/ClientReview/ClientReview";
+import { Menu, X } from "lucide-react";
 
 export default function Home() {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDrawer = () => setOpen(!open);
+
+
+  const toggleDrawer = () => setIsOpen(!isOpen);
 
   const services = [
     {
@@ -87,7 +90,7 @@ export default function Home() {
   return (
     <div className="h-screen w-full">
       {/* <header className="sticky top-0 flex justify-between items-center w-full bg-transparent"> */}
-      <header className="sticky top-0 flex justify-between items-center w-full bg-white z-50 shadow-md">
+      {/* <header className="sticky top-0 flex justify-between items-center w-full bg-white z-50 shadow-md">
         <div className="flex justify-between w-full  flex-wrap pt-2 pb-2">
           <nav>
             <div className="h-[45px] ml-[47px] w-[161px] bg-[url('/logo.png')] bg-no-repeat bg-contain absolute mt-3 " />
@@ -112,10 +115,44 @@ export default function Home() {
             </ul>
           </nav>
         </div>
-      </header>
+      </header> */}
+
+<header className="fixed  top-0 flex justify-between items-center w-full bg-white z-50 shadow-md p-3">
+      <div className="flex items-center justify-between w-full">
+        <div className="h-[35px] w-[140px] bg-[url('/logo.png')] bg-no-repeat bg-contain ml-4"></div>
+
+        <button className="lg:hidden mr-4" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+
+        <nav
+          className={`${
+            isOpen ? "block" : "hidden"
+          } lg:flex flex-col lg:flex-row lg:items-center absolute lg:relative top-16 lg:top-0 left-0 w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none p-4 lg:p-0`}
+        >
+          <ul className="lg:flex flex-col lg:flex-row items-center w-full lg:w-auto space-y-4 lg:space-y-0 lg:space-x-5 ">
+            <li className="text-[#013E57] text-lg">
+              <a href="/home" className="block px-4 py-2">HOME</a>
+            </li>
+            <li className="text-[#013E57] text-lg">
+              <a href="#" className="block px-4 py-2">ABOUT US</a>
+            </li>
+            <li className="text-[#013E57] text-lg">
+              <a href="#" className="block px-4 py-2">SERVICES</a>
+            </li>
+            <li className="text-[#013E57] text-lg">
+              <a href="#" className="block px-4 py-2">CLIENTS</a>
+            </li>
+            <li className="text-[#013E57] text-lg">
+              <a href="#" className="block px-4 py-2">CONTACT US</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
       {/* Main Content */}
-      <main className="flex-grow bg-[#013E57] pt-0">
+      <main className="flex-grow bg-[#013E57] pt-16">
         <HeaderBanner />
       </main>
       <main className="flex-grow  pt-0">
@@ -125,7 +162,7 @@ export default function Home() {
       <main className="flex-grow  bg-[#013E57] pt-10 pb-10">
         <Services products={services} />
       </main>
-      <main className="flex-grow  bg-[#013E57] pt-10 pb-0">
+      <main className="flex-grow  bg-[#013E57] pt-1 pb-0 justify-center items-center w-[100vw]">
         <ProductGrid products={products} />
       </main>
 

@@ -24,70 +24,46 @@ const reviews = [
 export default function ClientReviews() {
   return (
     <div
-    className="relative w-full text-center bg-cover bg-center bg-no-repeat h-auto md:h-[500px]"
-    style={{ backgroundImage: "url('/Images/lines.png')" }}
-  >
-    <section className="py-10 text-center">
-
-      <div className="titleContainer">
-          <div className="line ml-14"></div>
-          <h2 className="headerText">
-          WHAT <span className="text-[#000]">OUR</span> CLIENTS ARE SAYING
+      className="relative w-full text-center bg-cover bg-center bg-no-repeat h-auto md:h-[500px] px-4 sm:px-6 lg:px-8"
+      style={{ backgroundImage: "url('/Images/lines.png')" }}
+    >
+      <section className="py-10 text-center max-w-6xl mx-auto">
+        <div className="flex flex-col items-center md:flex-row md:justify-center md:gap-6 mb-6">
+          <div className="hidden md:block flex-1 h-[1px] bg-[#013E57]"></div>
+          <h2 className="text-xl md:text-3xl font-bold text-[#013E57] text-center">
+            WHAT <span className="text-black">OUR</span> CLIENTS ARE SAYING
           </h2>
-          <div className="line mr-14"></div>
+          <div className="hidden md:block flex-1 h-[1px] bg-[#013E57]"></div>
         </div>
-      
-      <Swiper
-        modules={[Pagination]}
-        pagination={{ clickable: true }}
-        loop={true}
-        className="max-w-4xl mx-auto"
-      >
-        {reviews.map((client, index) => (
-          <SwiperSlide key={index} className="p-6  rounded-lg">
-            <div className="flex flex-col items-center">
-              <img
-                src={client.image}
-                alt={client.name}
-                className="w-20 h-20 rounded-full"
-              />
-              <h3 className="text-lg font-semibold mt-3">{client.name}</h3>
-              <p className="text-sm text-red-500 ">{client.company}</p>
-            </div>
-            <p className="mt-4 text-gray-700 italic max-w-2xl mx-auto mb-10">
-              "{client.review}"
-            </p>
-          </SwiperSlide>
-        ))}
-      </Swiper>
 
-    </section>
-
-    <style jsx>{`
-        .titleContainer {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          // margin-bottom: 20px;
-        }
-        .line {
-          flex: 1;
-          height: 1px;
-          background-color: #013E57;
-          margin-top:14px
-        }
-        .headerText {
-          font-size: 1.8rem;
-          font-weight: bold;
-          color: #013E57;
-          text-align: center;
-          white-space: nowrap;
-          padding-left: 1px;
-          padding-right: 1px;
-        }
-        
-      `}</style>
+        <Swiper
+          modules={[Pagination]}
+          pagination={{ clickable: true }}
+          loop={true}
+          className="max-w-4xl mx-auto"
+        >
+          {reviews.map((client, index) => (
+            <SwiperSlide key={index} className="p-6 rounded-lg">
+              <div className="flex flex-col items-center">
+                <img
+                  src={client.image}
+                  alt={client.name}
+                  className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover"
+                />
+                <h3 className="text-base md:text-lg font-semibold mt-3">
+                  {client.name}
+                </h3>
+                <p className="text-xs md:text-sm text-red-500">
+                  {client.company}
+                </p>
+              </div>
+              <p className="mt-4 text-gray-700 italic max-w-2xl mx-auto text-sm md:text-base leading-relaxed pb-10">
+                "{client.review}"
+              </p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
     </div>
   );
 }

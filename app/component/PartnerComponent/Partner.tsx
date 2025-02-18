@@ -1,4 +1,4 @@
- const Partners = () =>{
+const Partners = () => {
     const partners = [
       { name: "LuLu", logo: "/Images/lulu.png" },
       { name: "Huawei", logo: "/Images/huawei.png" },
@@ -13,51 +13,28 @@
     ];
   
     return (
-      <section className="pb-6 bg-white text-center">
-       
-        <div className="titleContainer py-3">
-          <h2 className="headerText">
-            OUR <span className="text-[#ffffff]">PARTNERS</span>
+      <section className="pb-10 bg-white text-center">
+        <div className="flex items-center justify-center py-6 bg-[#013E57]">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#34C5FF] px-4">
+            OUR <span className="text-white">PARTNERS</span>
           </h2>
         </div>
-        <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 px-5">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-5 md:mt-16 mt-16">
           {partners.map((partner, index) => (
             <div
               key={index}
-              className="flex items-center justify-center hover:scale-105"
+              className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-24 mt-5 object-cover"
+                className="h-20 sm:h-24 md:h-28 lg:h-32 object-contain"
               />
             </div>
           ))}
         </div>
-        <style jsx>{`
-        .titleContainer {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          margin-bottom: 40px;
-          background-color:#013E57;
-          
-        }
-       
-        .headerText {
-          font-size: 1.8rem;
-          font-weight: bold;
-          color: #34C5FF;
-          text-align: center;
-          white-space: nowrap;
-          padding-left: 10px;
-          padding-right: 10px;
-        }
-        
-      `}</style>
       </section>
     );
-  }
+  };
   
-export default Partners;
+  export default Partners;
