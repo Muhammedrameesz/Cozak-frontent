@@ -19,16 +19,16 @@ const Partners = () => {
             OUR <span className="text-white">PARTNERS</span>
           </h2>
         </div>
-        <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-5 md:mt-16 mt-16">
+        <div className="max-w-[88%] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-5 md:mt-16 mt-16">
           {partners.map((partner, index) => (
             <div
               key={index}
-              className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105"
+              className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105 pt-3"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-20 sm:h-24 md:h-28 lg:h-32 object-contain"
+                className="h-20 sm:h-24 md:h-28 lg:h-30 object-contain"
               />
             </div>
           ))}

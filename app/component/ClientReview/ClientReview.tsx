@@ -27,7 +27,7 @@ export default function ClientReviews() {
       className="relative w-full text-center bg-cover bg-center bg-no-repeat h-auto md:h-[500px] px-4 sm:px-6 lg:px-8"
       style={{ backgroundImage: "url('/Images/lines.png')" }}
     >
-      <section className="py-10 text-center max-w-6xl mx-auto">
+      <section className="py-10 text-center max-w-[90%] mx-auto">
         <div className="flex flex-col items-center md:flex-row md:justify-center md:gap-6 mb-6">
           <div className="hidden md:block flex-1 h-[1px] bg-[#013E57]"></div>
           <h2 className="text-xl md:text-3xl font-bold text-[#013E57] text-center">
@@ -40,7 +40,8 @@ export default function ClientReviews() {
           modules={[Pagination]}
           pagination={{ clickable: true }}
           loop={true}
-          className="max-w-4xl mx-auto"
+          autoplay={true}
+          className="max-w-7xl mx-auto "
         >
           {reviews.map((client, index) => (
             <SwiperSlide key={index} className="p-6 rounded-lg">
@@ -57,7 +58,7 @@ export default function ClientReviews() {
                   {client.company}
                 </p>
               </div>
-              <p className="mt-4 text-gray-700 italic max-w-2xl mx-auto text-sm md:text-base leading-relaxed pb-10">
+              <p className="mt-4 text-gray-700 italic max-w-[80%] font-bold mx-auto text-sm md:text-base leading-relaxed pb-10">
                 "{client.review}"
               </p>
             </SwiperSlide>
