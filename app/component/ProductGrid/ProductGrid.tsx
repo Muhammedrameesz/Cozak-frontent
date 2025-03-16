@@ -196,7 +196,8 @@ const ProductGrid = ({ products }: any) => {
               <div className="buttonContainer">
                 {/* <button className="readMoreButton">Read More</button> */}
                 <div className="flex justify-end mt-5 mb-5">
-                <button className="readMoreButton bg-[#013E57] text-white px-4 py-2 rounded-l-full">
+                {/* <a href="/productPage" className="block px-4 py-2">Read More</a> */}
+                <button className="readMoreButton bg-[#013E57] text-white px-4 py-2 rounded-l-full" onClick={() => (window.location.href = "/productPage")}>
                   Read More
                 </button>
               </div>
