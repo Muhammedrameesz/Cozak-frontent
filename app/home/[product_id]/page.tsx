@@ -47,7 +47,7 @@ export default async function Page({
     return (
       <div className="md:grid-cols-3 grid sm:grid-cols-1 py-5 px-10 bg-slate-50">
         {designs.map((item) => (
-          <div className="rounded-lg shadow-xl overflow-hidden bg-white transform transition-transform duration-300 hover:-translate-y-2 flex items-center justify-center mt-5 md:m-5">
+          <div key={item.key} className="rounded-lg shadow-xl overflow-hidden bg-white transform transition-transform duration-300 hover:-translate-y-2 flex items-center justify-center mt-5 md:m-5">
             <div className="flex items-center justify-center p-2">
               <Image
                 src={item.image}
@@ -90,7 +90,7 @@ export default async function Page({
     return (
       <div className="md:grid-cols-3 grid sm:grid-cols-1 py-5 px-10 bg-slate-50">
         {designs.map((item) => (
-          <div className="rounded-lg shadow-xl overflow-hidden bg-white transform transition-transform duration-300 hover:-translate-y-2 flex items-center justify-center mt-5 md:m-5">
+          <div key={item.key} className="rounded-lg shadow-xl overflow-hidden bg-white transform transition-transform duration-300 hover:-translate-y-2 flex items-center justify-center mt-5 md:m-5">
             <div className="flex items-center justify-center p-2">
               <Image
                 src={item.image}
@@ -133,7 +133,7 @@ export default async function Page({
     return (
       <div className="md:grid-cols-3 grid sm:grid-cols-1 py-5 px-10 bg-slate-50">
         {designs.map((item) => (
-          <div className="rounded-lg shadow-xl overflow-hidden bg-white transform transition-transform duration-300 hover:-translate-y-2 flex items-center justify-center mt-5 md:m-5">
+          <div key={item.key} className="rounded-lg shadow-xl overflow-hidden bg-white transform transition-transform duration-300 hover:-translate-y-2 flex items-center justify-center mt-5 md:m-5">
             <div className="flex items-center justify-center p-2">
               <Image
                 src={item.image}
@@ -176,7 +176,7 @@ export default async function Page({
     return (
       <div className="md:grid-cols-3 grid sm:grid-cols-1 py-5 px-10 bg-slate-50">
         {designs.map((item) => (
-          <div className="rounded-lg shadow-xl overflow-hidden bg-white transform transition-transform duration-300 hover:-translate-y-2 flex items-center justify-center mt-5 md:m-5">
+          <div key={item.key} className="rounded-lg shadow-xl overflow-hidden bg-white transform transition-transform duration-300 hover:-translate-y-2 flex items-center justify-center mt-5 md:m-5">
             <div className="flex items-center justify-center p-2">
               <Image
                 src={item.image}
