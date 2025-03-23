@@ -1,3 +1,6 @@
+"use client";
+
+
 import Image from "next/image";
 
 const products = [
@@ -27,58 +30,60 @@ const products = [
   },
 ];
 
+
+
+
 export default function Products() {
-  return (
-    <section className="py-10 bg-gray-100">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
-          Our Products
+
+  const SectionHeader = () =>{
+    return (
+      <div className="flex items-center justify-center w-full my-14">
+        <div className="flex-grow h-1 bg-gray-200 rounded-full"></div>
+        <h2 className="px-4 text-3xl font-bold text-black">
+          <span className="text-[#013E57]">OUR</span> PRODUCTS
         </h2>
+        <div className="flex-grow h-1 bg-gray-200 rounded-full"></div>
+      </div>
+    )
+  }
+
+  return (
+    <section className="py-10 bg-white">
+   
+   <div className=" h-[44px] top-[294px] mb-20 left-[81px] flex justify-center items-center">
+  <h3 className="w-2/3 font-inter font-normal text-[18px] leading-[22px] tracking-[2%] text-center text-[#013E57]">
+    The company possesses not only the latest technology gadgets but also the most knowledgeable and experienced hands to offer the most user-friendly customized solutions. We developed a range of solutions and gained ample experience in the services.
+  </h3>
+</div>
+
+
+      <div className="container mx-auto px-4">
+        <div>
+        {SectionHeader()}
+       </div>
+
         <div className="space-y-10">
           {products.map((product, index) => (
             <div
               key={index}
-              className={`flex flex-col md:flex-row ${
-                index % 2 === 0 ? "md:flex-row-reverse" : ""
-              } items-center bg-[#013E57] shadow-lg rounded-xl overflow-hidden md:h-64 px-10 `}
-            >
-              {/* Product Image */}
-              {/* <div className="w-full md:w-[27%] relative h-60 md:ml-5">
+              className={`flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row-reverse " : ""} items-center bg-[#013E57] py-10 md:py-0 shadow-lg rounded-xl overflow-hidden md:h-64 px-10`}>
+              <div className={`relative w-full md:w-[22%] h-60  ${index % 2 === 0 ? "md:-ml-6" : "md:-mr-5 md:ml-6"}`}>
                 <Image
                   src={product.image}
                   alt={product.title}
-                  layout="fill"
-                  objectFit="contain"
-                  className="rounded-md"
-                />
-              </div> */}
-
-              <div
-                className={`w-full md:w-[22%] relative h-60 md:ml-5 md:-mr-5 ${
-                  index % 2 === 0 ? "md:mr-5 md:-ml-5" : ""
-                }`}
-              >
-                <Image
-                  src={product.image}
-                  alt={product.title}
-                  layout="fill"
-                  objectFit="contain"
-                  className="rounded-md"
+                  fill
+                  className="rounded-md object-contain"
                 />
               </div>
-
-              {/* Product Description */}
-              <div className="w-full md:w-[76%] p-6 bg-white md:h-[90%] rounded-xl">
-              <div className="w-full md:w-[58%] bg-transparent md:h-[42%] md:-mt-14 xl:border-[1px] border-[#013E57] rounded-sm md:absolute"/>
+              <div className={`w-full md:w-[80%] p-6 bg-white md:h-[90%] rounded-xl mt-4  md:mt-0`}>
+              {/* <div className="w-full md:w-[59%] bg-transparent md:h-[42%] md:-mt-14 
+              2xl:w-[55%] xl:bg-transparent 2xl:h-[30%] xl:-mt-12 xl:-ml-1 
+               xl:border-[1px] border-[#013E57] rounded-sm md:absolute"/> */}
                 <h3 className="text-xl font-semibold text-gray-900 text-center">
                   {product.title}
                 </h3>
                 <p className="text-gray-700 mt-2 text-center">{product.description}</p>
-
-               
               </div>
-             
-              
             </div>
           ))}
         </div>

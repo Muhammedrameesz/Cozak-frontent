@@ -7,7 +7,7 @@ const Banner = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentText((prev) => (prev + 1) % texts.length);
+      setCurrentText((prev) => (prev + 1) % 5);
     }, 1500);
 
     return () => clearInterval(interval);

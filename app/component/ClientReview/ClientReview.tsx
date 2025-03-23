@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import Image from "next/image";
 
 const reviews = [
   {
@@ -46,9 +47,16 @@ export default function ClientReviews() {
           {reviews.map((client, index) => (
             <SwiperSlide key={index} className="p-6 rounded-lg">
               <div className="flex flex-col items-center">
-                <img
+                {/* <img
                   src={client.image}
                   alt={client.name}
+                  className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover"
+                /> */}
+                <Image
+                  src={client.image}
+                  alt={client.name}
+                  width={80} // Define width explicitly
+                  height={80} // Define height explicitly
                   className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover"
                 />
                 <h3 className="text-base md:text-lg font-semibold mt-3">
@@ -59,7 +67,7 @@ export default function ClientReviews() {
                 </p>
               </div>
               <p className="mt-4 text-gray-700 italic max-w-[80%] font-bold mx-auto text-sm md:text-base leading-relaxed pb-10">
-                "{client.review}"
+                {client.review}
               </p>
             </SwiperSlide>
           ))}
