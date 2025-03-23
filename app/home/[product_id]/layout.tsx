@@ -100,7 +100,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <main className="flex-grow bg-[#013E57] pt-16">
-          <InnerHeaderBanner title={getHeaderTitle()} key={slug}/>
+          <InnerHeaderBanner title={getHeaderTitle()} bannerKey={slug}/>
         </main>
         {children}
         <main className="flex-grow  bg-[#FFFFFF] pt-0 pb-10">

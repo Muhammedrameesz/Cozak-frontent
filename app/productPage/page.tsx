@@ -61,7 +61,7 @@ export default function ProductScreen() {
 
       {/* Main Content */}
       <main className="flex-grow bg-[#013E57] pt-16">
-        <InnerHeaderBanner />
+        <InnerHeaderBanner bannerKey={'productbanner'}/>
       </main>
       <main className="flex-grow  bg-[#FFFFFF] pt-1 pb-0">
         <SoftwareProducts />

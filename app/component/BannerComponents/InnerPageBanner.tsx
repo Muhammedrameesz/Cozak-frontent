@@ -1,29 +1,25 @@
 import React from "react";
 interface InnerHeaderBannerProps {
   title?: string;
-  key?:string
+  bannerKey?: string;
 }
+
 const InnerHeaderBanner: React.FC<InnerHeaderBannerProps> = ({
   title = "SOFTWARE DEVELOPMENT",
-  key = ""
+  bannerKey = "",
 }) => {
-
-
-  const getImg = (keyId?:string) => {
-    const bgImages = {
-        mobile_development: "url('/ServicesImage/mobBg.png')",
-        seo: "url('/ServicesImage/seoBg.png')",
-        web_development: "url('/ServicesImage/webBG.png')",
-        web_design: "url('/ServicesImage/webBG.png')"
-    };
-
-    return bgImages[keyId] || "url('/ServicesImage/productbanner.png')";
-};
-
+  const bgImages: Record<string, string> = {
+    mobile_development: "url('/ServicesImage/mobBg.png')",
+    seo: "url('/ServicesImage/seoBg.png')",
+    web_development: "url('/ServicesImage/webBG.png')",
+    web_design: "url('/ServicesImage/webBG.png')",
+    productbanner: "url('/ServicesImage/productbanner.png')",
+  };
+  const backgroundImage = bgImages[bannerKey];
   return (
     <section
       className="relative w-full text-center bg-cover bg-center bg-no-repeat h-[40vh] sm:h-[35vh] md:h-[30vh] lg:h-[35vh] xl:h-[40vh] -mt-5"
-      style={{ backgroundImage: getImg(key)}}
+      style={{ backgroundImage }}
     >
       <div className="absolute inset-0 bg-black opacity-40"></div>
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 text-center">
