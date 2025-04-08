@@ -98,12 +98,24 @@ const FooterComponent = () => {
         <div>
           <h3 className="font-bold text-lg mb-3">SERVICES</h3>
           <ul className="space-y-2">
-            <li className="font-inter font-light text-[14px] leading-[20.94px] tracking-[0.42px]">Software Development</li>
-            <li className="font-inter font-light text-[14px] leading-[20.94px] tracking-[0.42px]">Web Designing</li>
-            <li className="font-inter font-light text-[14px] leading-[20.94px] tracking-[0.42px]">Mobile App Development</li>
-            <li className="font-inter font-light text-[14px] leading-[20.94px] tracking-[0.42px]">SEO</li>
-            <li className="font-inter font-light text-[14px] leading-[20.94px] tracking-[0.42px]">Embedded Systems</li>
-            <li className="font-inter font-light text-[14px] leading-[20.94px] tracking-[0.42px]">Creative Ad Works</li>
+            <li className="font-inter font-light text-[14px] leading-[20.94px] tracking-[0.42px]">
+              Software Development
+            </li>
+            <li className="font-inter font-light text-[14px] leading-[20.94px] tracking-[0.42px]">
+              Web Designing
+            </li>
+            <li className="font-inter font-light text-[14px] leading-[20.94px] tracking-[0.42px]">
+              Mobile App Development
+            </li>
+            <li className="font-inter font-light text-[14px] leading-[20.94px] tracking-[0.42px]">
+              SEO
+            </li>
+            <li className="font-inter font-light text-[14px] leading-[20.94px] tracking-[0.42px]">
+              Embedded Systems
+            </li>
+            <li className="font-inter font-light text-[14px] leading-[20.94px] tracking-[0.42px]">
+              Creative Ad Works
+            </li>
           </ul>
         </div>
 
@@ -111,7 +123,7 @@ const FooterComponent = () => {
         <div>
           <h3 className="font-bold text-lg mb-3">BRANCH OFFICES</h3>
           <ul className="space-y-3">
-            <li  className="font-inter font-light text-[14px] leading-[20.94px] tracking-[0.42px]">
+            <li className="font-inter font-light text-[14px] leading-[20.94px] tracking-[0.42px]">
               <div className="flex items-center gap-2">
                 <Image
                   src="/FooterImages/ind.png"

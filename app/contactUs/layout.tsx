@@ -30,14 +30,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+
+
         <MainNavBar />
-        <main className="flex-grow bg-[#013E57] pt-16">
-          <InnerHeaderBanner title={"About Us"} />
-        </main>
         {children}
-        <main className="flex-grow  bg-[#FFFFFF] pt-0 pb-10">
+        {/* <main className="flex-grow  bg-[#FFFFFF] pt-0 pb-10">
           <Partners />
-        </main>
+        </main> */}
 
         <main className="flex-grow  bg-[#ffffff] pt-10 pb-10">
           <FooterComponent />

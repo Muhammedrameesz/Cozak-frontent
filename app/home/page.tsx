@@ -7,19 +7,15 @@ import Banner from "../component/BannerComponents/Banner";
 import FooterComponent from "../component/FooterComponent/FooterComponent";
 import Partners from "../component/PartnerComponent/Partner";
 import ClientReviews from "../component/ClientReview/ClientReview";
-import Link from "next/link";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import MainNavBar from "../component/Navbar/mainNavBar";
 
 export default function Home() {
-
-  const [isOpen, setIsOpen] = useState(false);
-
+  
 
   const services = [
     {
       id: 1,
-      key:"web_development",
+      key: "web_development",
       title: "WEB DEVELOPMENT",
       subtitle: "Amazing Quality",
       description: "This is a great product that offers excellent value.",
@@ -28,7 +24,7 @@ export default function Home() {
     {
       id: 2,
       title: "WEB DESIGNS",
-      key:"web_design",
+      key: "web_design",
       subtitle: "Top-notch Performance",
       description: "Experience the best performance with this product.",
       image: "/ServicesImage/designs.png",
@@ -36,7 +32,7 @@ export default function Home() {
     {
       id: 3,
       title: "SEO",
-      key:"seo",
+      key: "seo",
       subtitle: "Affordable Luxury",
       description: "Luxury meets affordability in this fantastic item.",
       image: "/ServicesImage/seo.png",
@@ -44,7 +40,7 @@ export default function Home() {
     {
       id: 4,
       title: "MOBILE APP",
-      key:"mobile_development",
+      key: "mobile_development",
       subtitle: "Eco-friendly Design",
       description: "Sustainability and style come together in this product.",
       image: "/ServicesImage/mobile.png",
@@ -90,50 +86,8 @@ export default function Home() {
 
   return (
     <div className="h-screen w-full">
-       <header className="fixed  top-0 flex justify-between items-center w-full bg-white z-50 shadow-md p-3">
-        <div className="flex items-center justify-between w-full">
-          <div className="h-[35px] w-[140px] bg-[url('/logo.png')] bg-no-repeat bg-contain ml-4"></div>
-
-          <button className="lg:hidden mr-4" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-
-          <nav
-            className={`${
-            "block"
-            } lg:flex flex-col lg:flex-row lg:items-center absolute lg:relative top-16 lg:top-0 left-0 w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none p-4 lg:p-0`}
-          >
-            <ul className="lg:flex flex-col lg:flex-row items-center w-full lg:w-auto space-y-4 lg:space-y-0 lg:space-x-5 ">
-              <li className="text-[#013E57] text-lg">
-                <Link href="/home" className="block px-4 py-2">
-                  HOME
-                </Link>
-              </li>
-              <li className="text-[#013E57] text-lg">
-                <Link href="/aboutUs" className="block px-4 py-2">
-                  ABOUT US
-                </Link>
-              </li>
-              <li className="text-[#013E57] text-lg">
-                <Link href="#" className="block px-4 py-2">
-                  SERVICES
-                </Link>
-              </li>
-              <li className="text-[#013E57] text-lg">
-                <Link href="#" className="block px-4 py-2">
-                  CLIENTS
-                </Link>
-              </li>
-              <li className="text-[#013E57] text-lg">
-                <Link href="#" className="block px-4 py-2">
-                  CONTACT US
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      {/* Main Content */}
+     <MainNavBar/>
+    
       <main className="flex-grow bg-[#013E57] pt-16">
         <HeaderBanner />
       </main>
@@ -144,7 +98,7 @@ export default function Home() {
       <main className="flex-grow  bg-[#013E57] pt-10 pb-10">
         <Services products={services} />
       </main>
-      <main className="flex-grow  bg-[#013E57] pt-1 pb-0 justify-center items-center w-[100vw]">
+      <main className="flex-grow  bg-[#013E57] pt-1 pb-0 justify-center items-center ">
         <ProductGrid products={products} />
       </main>
 

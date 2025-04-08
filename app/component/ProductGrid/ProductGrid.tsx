@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import React from "react";
 
@@ -9,7 +11,7 @@ interface Product {
 
 const ProductGrid = ({ products }: { products: Product[] }) => {
   return (
-    <div className="justify-center items-center w-[100vw] md:px-20 px-1">
+    <div className="justify-center items-center  md:px-20 px-1 overflow-x-hidden">
       <div className="contentContainer">
         <div className="titleContainer">
           <div className="line"></div>
@@ -62,6 +64,7 @@ const ProductGrid = ({ products }: { products: Product[] }) => {
           align-items: center;
           justify-content: center;
           gap: 0px;
+          
         }
         .line {
           flex: 1;

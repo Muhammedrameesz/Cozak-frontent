@@ -2,13 +2,9 @@
 import InnerHeaderBanner from "@/app/component/BannerComponents/InnerPageBanner";
 import FooterComponent from "@/app/component/FooterComponent/FooterComponent";
 import Partners from "@/app/component/PartnerComponent/Partner";
-import { Menu, X } from "lucide-react";
-// import type { Metadata } from "next";
+import MainNavBar from "@/app/component/Navbar/mainNavBar";
 import { Geist, Geist_Mono } from "next/font/google";
-import Link from "next/link";
-import { useState } from "react";
 import { usePathname } from "next/navigation";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,7 +25,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isOpen, setIsOpen] = useState(false);
+
   const pathname = usePathname(); // Get current path
   const slug = pathname.split("/").filter(Boolean).pop(); 
 
@@ -53,49 +49,7 @@ export default function RootLayout({
   
   return (
     <html lang="en">
-        <header className="fixed  top-0 flex justify-between items-center w-full bg-white z-50 shadow-md p-3">
-        <div className="flex items-center justify-between w-full">
-          <div className="h-[35px] w-[140px] bg-[url('/logo.png')] bg-no-repeat bg-contain ml-4"></div>
-
-          <button className="lg:hidden mr-4" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-
-          <nav
-            className={`${
-            isOpen?"block":'hidden'
-            } lg:flex flex-col lg:flex-row lg:items-center absolute lg:relative top-16 lg:top-0 left-0 w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none p-4 lg:p-0`}
-          >
-            <ul className="lg:flex flex-col lg:flex-row items-center w-full lg:w-auto space-y-4 lg:space-y-0 lg:space-x-5 ">
-              <li className="text-[#013E57] text-lg">
-                <Link href="/home" className="block px-4 py-2">
-                  HOME
-                </Link>
-              </li>
-              <li className="text-[#013E57] text-lg">
-                <Link href="#" className="block px-4 py-2">
-                  ABOUT US
-                </Link>
-              </li>
-              <li className="text-[#013E57] text-lg">
-                <Link href="#" className="block px-4 py-2">
-                  SERVICES
-                </Link>
-              </li>
-              <li className="text-[#013E57] text-lg">
-                <Link href="#" className="block px-4 py-2">
-                  CLIENTS
-                </Link>
-              </li>
-              <li className="text-[#013E57] text-lg">
-                <Link href="#" className="block px-4 py-2">
-                  CONTACT US
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+        <MainNavBar/>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

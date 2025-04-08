@@ -14,6 +14,7 @@ const InnerHeaderBanner: React.FC<InnerHeaderBannerProps> = ({
     web_development: "url('/ServicesImage/webBG.png')",
     web_design: "url('/ServicesImage/webBG.png')",
     productbanner: "url('/ServicesImage/productbanner.png')",
+    contactUs:"url('/ServicesImage/productbanner.png')"
   };
   const backgroundImage = bgImages[bannerKey];
   return (
