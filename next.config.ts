@@ -1,14 +1,9 @@
-import type { NextConfig } from "next";
+// next.config.ts or next.config.js
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  typescript: {
-    ignoreBuildErrors: true,
+const nextConfig = {
+  images: {
+    domains: ['img.freepik.com','res.cloudinary.com'],
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-
 };
 
 export default nextConfig;
