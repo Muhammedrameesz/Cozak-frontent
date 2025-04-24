@@ -1,6 +1,8 @@
 "use client"
+import { useRouter } from "next/navigation";
 
 const HeaderBanner = () => {
+  const router = useRouter()
   return (
     <div
       className="relative w-full text-center bg-cover bg-center bg-no-repeat h-[80vh] sm:h-[75vh] md:h-[70vh] lg:h-[85vh] xl:h-[90vh]"
@@ -22,7 +24,7 @@ const HeaderBanner = () => {
           “Your vision, our innovation”
         </p>
         <button
-          onClick={() => (window.location.href = "/productPage")}
+          onClick={() => router.push("/productPage")}
           className="bg-[#34C5FF] w-[150px] sm:w-[180px] md:w-[200px] lg:w-[220px] h-[45px] sm:h-[55px] md:h-[60px] lg:h-[70px] mt-5 sm:mt-6 md:mt-8 lg:mt-10 text-[#013E57] font-bold text-base sm:text-lg md:text-xl tracking-wide px-4 py-2 rounded-full hover:bg-[#02b4fa] transition duration-300"
         >
           EXPLORE

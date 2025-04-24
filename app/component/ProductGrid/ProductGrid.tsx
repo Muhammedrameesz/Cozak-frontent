@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import React from "react";
+import { useRouter } from "next/navigation";
 
 interface Product {
   id: string | number;
@@ -10,6 +10,7 @@ interface Product {
 }
 
 const ProductGrid = ({ products }: { products: Product[] }) => {
+  const router = useRouter();
   return (
     <div className="justify-center items-center  md:px-20 px-1 overflow-x-hidden">
       <div className="contentContainer">
@@ -47,7 +48,7 @@ const ProductGrid = ({ products }: { products: Product[] }) => {
                   {/* <a href="/productPage" className="block px-4 py-2">Read More</a> */}
                   <button
                     className="readMoreButton bg-[#013E57] text-white px-4 py-2 rounded-l-full"
-                    onClick={() => (window.location.href = "/productPage")}
+                    onClick={() => router.push("/productPage")}
                   >
                     Read More
                   </button>
