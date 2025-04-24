@@ -26,13 +26,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
+   
+      <div
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <MainNavBar />
         <main className="flex-grow bg-[#013E57] pt-16">
-          <InnerHeaderBanner title={"About Us"} />
+          <InnerHeaderBanner title={"About Us"} bannerKey="productbanner"/>
         </main>
         {children}
         <main className="flex-grow  bg-[#FFFFFF] pt-0 pb-10">
@@ -50,7 +50,7 @@ export default function RootLayout({
             </a>
           </div>
         </main>
-      </body>
-    </html>
+      </div>
+   
   );
 }

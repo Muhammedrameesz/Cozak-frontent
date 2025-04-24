@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import InnerHeaderBanner from "@/app/component/BannerComponents/InnerPageBanner";
 import FooterComponent from "@/app/component/FooterComponent/FooterComponent";
 import Partners from "@/app/component/PartnerComponent/Partner";
@@ -25,43 +25,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   const pathname = usePathname(); // Get current path
-  const slug = pathname.split("/").filter(Boolean).pop(); 
+  const slug = pathname.split("/").filter(Boolean).pop();
 
-  const getHeaderTitle = () =>{
-    if(slug === "mobile_development"){
-      return "MOBILE APP DEVELOPMENT"
+  const getHeaderTitle = () => {
+    if (slug === "mobile_development") {
+      return "MOBILE APP DEVELOPMENT";
+    } else if (slug === "seo") {
+      return "SEARCH ENGINE OPTIMIZATION";
+    } else if (slug === "web_development") {
+      return "WEB DEVELOPMENT";
+    } else if (slug === "web_design") {
+      return "WEB DESIGNING";
+    } else {
+      return "";
     }
-    else if(slug === "seo"){
-      return "SEARCH ENGINE OPTIMIZATION"
-    }
-    else if(slug === "web_development"){
-      return "WEB DEVELOPMENT"
-    }
-    else if(slug === "web_design"){
-      return "WEB DESIGNING"
-    }
-    else{
-      return ""
-    }
-  }
-  
+  };
+
   return (
-    <html lang="en">
-        <MainNavBar/>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <main className="flex-grow bg-[#013E57] pt-16">
-          <InnerHeaderBanner title={getHeaderTitle()} bannerKey={slug}/>
-        </main>
-        {children}
-        <main className="flex-grow  bg-[#FFFFFF] pt-0 pb-10">
-          <Partners />
-        </main>
+    <main className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <MainNavBar />
+      <section className="flex-grow bg-[#013E57] pt-16">
+        <InnerHeaderBanner title={getHeaderTitle()} bannerKey={slug} />
+      </section>
+      {children}
+      <section className="flex-grow  bg-[#FFFFFF] pt-0 pb-10">
+        <Partners />
+      </section>
 
-        <main className="flex-grow  bg-[#ffffff] pt-10 pb-10">
+      <section className="flex-grow  bg-[#ffffff] pt-10 pb-10">
         <FooterComponent />
         <div className="text-center text-sm mt-4  border-gray-600 ">
           <a
@@ -71,8 +63,7 @@ export default function RootLayout({
             https://cozaktechnologies.in
           </a>
         </div>
-      </main>
-      </body>
-    </html>
+      </section>
+    </main>
   );
 }

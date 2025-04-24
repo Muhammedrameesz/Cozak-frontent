@@ -1,10 +1,10 @@
-"use client";
+// "use client";
 // import InnerHeaderBanner from "@/app/component/BannerComponents/InnerPageBanner";
 import FooterComponent from "@/app/component/FooterComponent/FooterComponent";
 // import Partners from "@/app/component/PartnerComponent/Partner";
 import { Geist, Geist_Mono } from "next/font/google";
 import MainNavBar from "../component/Navbar/mainNavBar";
-import {Toaster} from "sonner"
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,31 +27,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-
-
-        <MainNavBar />
-        {children}
-        <Toaster richColors position="top-right" />
-        {/* <main className="flex-grow  bg-[#FFFFFF] pt-0 pb-10">
+    <div className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <MainNavBar />
+      {children}
+      <Toaster richColors position="top-right" />
+      {/* <main className="flex-grow  bg-[#FFFFFF] pt-0 pb-10">
           <Partners />
         </main> */}
 
-        <main className="flex-grow  bg-[#ffffff] pt-10 pb-10">
-          <FooterComponent />
-          <div className="text-center text-sm mt-4  border-gray-600 ">
-            <a
-              href="https://cozaktechnologies.in"
-              className="flex items-center justify-center gap-2"
-            >
-              https://cozaktechnologies.in
-            </a>
-          </div>
-        </main>
-      </body>
-    </html>
+      <main className="flex-grow  bg-[#ffffff] pt-10 pb-10">
+        <FooterComponent />
+        <div className="text-center text-sm mt-4  border-gray-600 ">
+          <a
+            href="https://cozaktechnologies.in"
+            className="flex items-center justify-center gap-2"
+          >
+            https://cozaktechnologies.in
+          </a>
+        </div>
+      </main>
+    </div>
   );
 }
