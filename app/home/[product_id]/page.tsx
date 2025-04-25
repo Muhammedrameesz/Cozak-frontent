@@ -131,7 +131,7 @@ export default async function Page({
     ];
 
     return (
-      <div className="md:grid-cols-3 grid sm:grid-cols-1 py-5 px-10 bg-slate-50">
+      <div className="md:grid-cols-3 grid sm:grid-cols-1 py-5 px-10 bg-slate-50 text-gray-950">
         {designs.map((item) => (
           <div key={item.key} className="rounded-lg shadow-xl overflow-hidden bg-white transform transition-transform duration-300 hover:-translate-y-2 flex items-center justify-center mt-5 md:m-5">
             <div className="flex items-center justify-center p-2">
@@ -225,12 +225,12 @@ export default async function Page({
 
   const SectionHeader = ({ title }: { title: string }): JSX.Element => {
     return (
-      <div className="flex items-center justify-center w-full my-14">
+      <div className="flex items-center justify-center w-full my-14 text-gray-950 bg-white">
         <div className="flex-grow h-1 bg-gray-200 rounded-full"></div>
         <h2 className="px-4 text-3xl font-bold text-black">
           <span className="text-[#013E57]">OUR</span> {title}
         </h2>
-        <div className="flex-grow h-1 bg-gray-200 rounded-full"></div>
+        <div className="flex-grow h-1 bg-gray-200 text-gray-950 rounded-full"></div>
       </div>
     );
   };

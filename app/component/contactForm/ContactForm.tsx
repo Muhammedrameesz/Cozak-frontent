@@ -6,6 +6,7 @@ import { z } from "zod";
 import axios, { AxiosError } from "axios";
 import { toast } from "sonner";
 import { useState } from "react";
+import {baseUrl} from "@/app/base/base_url"
 
 const formSchema = z.object({
   firstName: z
@@ -50,7 +51,7 @@ export default function ContactForm() {
     try {
       await new Promise((resolve) => setTimeout(resolve, 2500));
       const response = await axios.post(
-        "http://localhost:3637/api/v1/userForm/submit",
+        `${baseUrl}/userForm/submit`,
         data
       );
 

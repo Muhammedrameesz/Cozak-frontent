@@ -1,12 +1,18 @@
 "use client"
 import { useRouter } from "next/navigation";
-
+import {useActiveBanner} from "@/app/hooks/fetchBanner"
 const HeaderBanner = () => {
+
+  const {banner} = useActiveBanner()
   const router = useRouter()
   return (
     <div
       className="relative w-full text-center bg-cover bg-center bg-no-repeat h-[80vh] sm:h-[75vh] md:h-[70vh] lg:h-[85vh] xl:h-[90vh]"
-      style={{ backgroundImage: "url('/Images/bannerOld.png')" }}
+      style={{
+        backgroundImage: `url('${
+          banner?.BannerImage || "/Images/bannerOld.png"
+        }')`,
+      }}
     >
       <div className="absolute inset-0 bg-[#164591] mix-blend-multiply opacity-40"></div>
       <div className="absolute inset-0 bg-[#013E57] opacity-60"></div>
